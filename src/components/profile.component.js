@@ -15,7 +15,7 @@ export default class Profile extends Component {
 
   componentDidMount() {
     const currentUser = AuthService.getCurrentUser();
-    //console.log(AuthService.getCurrentUser())
+    console.log(AuthService.getCurrentUser().id)
 
     if (!currentUser) this.setState({ redirect: "/home" });
     this.setState({ currentUser: currentUser, userReady: true })
@@ -34,7 +34,7 @@ export default class Profile extends Component {
         <div>
         <header className="jumbotron">
           <h3>
-            <strong>{currentUser.username}</strong> Profile
+            <strong>{currentUser.username}</strong>
           </h3>
         </header>
         <p>

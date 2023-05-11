@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import UserService from "../services/user.service";
 import EventBus from "../common/EventBus";
-import Home from "./home";
+
 
 export default class BoardUser extends Component {
   constructor(props) {
@@ -40,7 +40,7 @@ export default class BoardUser extends Component {
   render() {
     return (
       <div className="container">
-            <Home />
+
       </div>
     );
   }

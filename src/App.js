@@ -21,6 +21,7 @@ import EditTeacher from "./components/teachers/edit-teacher.component";
 import Subjects from "./components/subjects/subjects";
 import AddSubject from "./components/subjects/add-subject.component";
 import EditSubject from "./components/subjects/edit-subject.component";
+import UserExams from "./components/exams/user-exams";
 
 
 class App extends Component {
@@ -99,7 +100,7 @@ class App extends Component {
             {showAdminBoard && (
                 <li className="nav-item">
                   <Link to={"/subjects"} className="nav-link">
-                    Предметы
+                    Дисциплины
                   </Link>
                 </li>
             )}
@@ -107,7 +108,7 @@ class App extends Component {
 
             {(!showAdminBoard && currentUser) && (
                 <li className="nav-item">
-                  <Link to={"/admin"} className="nav-link">
+                  <Link to={"/exams"} className="nav-link">
                     Оценки
                   </Link>
                 </li>
@@ -141,7 +142,7 @@ class App extends Component {
 
         <div className="container mt-3">
           <Routes>
-            <Route path="/" element={<Login />} />
+            <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
@@ -156,6 +157,7 @@ class App extends Component {
             <Route path="/subjects" element={<Subjects />} />
             <Route path="/subjects/add" element={<AddSubject />} />
             <Route path="/subjects/edit/:id" element={<EditSubject />} />
+            <Route path="/exams" element={<UserExams />} />
           </Routes>
         </div>
       </div>

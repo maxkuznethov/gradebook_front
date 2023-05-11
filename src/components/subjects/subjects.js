@@ -26,7 +26,7 @@ export default function Subjects() {
         <div className="container">
             <div className="py-4">
                 <Link className="btn btn-outline-dark" to="/subjects/add">
-                    Добавить предмет
+                    Добавить дисциплину
                 </Link>
                 <hr/>
 

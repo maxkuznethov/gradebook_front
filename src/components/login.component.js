@@ -122,14 +122,14 @@ class Login extends Component {
             </div>
 
             <div className="form-group">
-              <button
+              <button style={{backgroundColor: "#19517B", borderColor: "#19517B"}}
                 className="btn btn-primary btn-block"
                 disabled={this.state.loading}
               >
                 {this.state.loading && (
                   <span className="spinner-border spinner-border-sm"></span>
                 )}
-                <span>Login</span>
+                <span>Войти</span>
               </button>
             </div>
 
