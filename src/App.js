@@ -9,7 +9,7 @@ import Login from "./components/login.component";
 import Register from "./components/register.component";
 import Home from "./components/home.component";
 import Profile from "./components/profile.component";
-import BoardUser from "./components/board-user.component";
+
 
 import EditBook from "./components/teachers/edit-teacher.component";
 import EventBus from "./common/EventBus";
@@ -147,7 +147,6 @@ class App extends Component {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/book" element={<BoardUser />} />
             <Route exact path="/editBook/:id" element={<EditBook />} />
             <Route exact path="/addBook" element={<AddBook />} />
             <Route path="/admin" element={<Admin />} />
