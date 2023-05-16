@@ -10,6 +10,7 @@ export default class Home extends Component {
       content: ""
     };
   }
+  /*
 
   componentDidMount() {
     UserService.getPublicContent().then(
@@ -27,7 +28,7 @@ export default class Home extends Component {
         });
       }
     );
-  }
+  }*/
 
   render() {
     return (
