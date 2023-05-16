@@ -11,9 +11,8 @@ import Home from "./components/home.component";
 import Profile from "./components/profile.component";
 
 
-import EditBook from "./components/teachers/edit-teacher.component";
+
 import EventBus from "./common/EventBus";
-import AddBook from "./components/teachers/add-teacher.component";
 import Admin from "./components/admin";
 import Teachers from "./components/teachers/teachers";
 import AddTeacher from "./components/teachers/add-teacher.component";
@@ -22,6 +21,7 @@ import Subjects from "./components/subjects/subjects";
 import AddSubject from "./components/subjects/add-subject.component";
 import EditSubject from "./components/subjects/edit-subject.component";
 import UserExams from "./components/exams/user-exams";
+import AdminExams from "./components/exams/admin-exams";
 
 
 class App extends Component {
@@ -84,7 +84,7 @@ class App extends Component {
 
             {showAdminBoard && (
                 <li className="nav-item">
-                  <Link to={"/admin"} className="nav-link">
+                  <Link to={"/admin/exams"} className="nav-link">
                     Оценки
                   </Link>
                 </li>
@@ -123,7 +123,7 @@ class App extends Component {
                 </Link>
               </li>
               <li className="nav-item">
-                <a href="/login" className="nav-link" onClick={this.logOut}>
+                <a href="/logout" className="nav-link" onClick={this.logOut}>
                   Выйти
                 </a>
               </li>
@@ -145,10 +145,9 @@ class App extends Component {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/logout" element={<Home />} />
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
-            <Route exact path="/editBook/:id" element={<EditBook />} />
-            <Route exact path="/addBook" element={<AddBook />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/teachers" element={<Teachers />} />
             <Route path="/teachers/add" element={<AddTeacher />} />
@@ -157,6 +156,7 @@ class App extends Component {
             <Route path="/subjects/add" element={<AddSubject />} />
             <Route path="/subjects/edit/:id" element={<EditSubject />} />
             <Route path="/exams" element={<UserExams />} />
+            <Route path="admin/exams" element={<AdminExams />} />
           </Routes>
         </div>
       </div>
