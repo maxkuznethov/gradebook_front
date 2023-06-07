@@ -22,6 +22,8 @@ import AddSubject from "./components/subjects/add-subject.component";
 import EditSubject from "./components/subjects/edit-subject.component";
 import UserExams from "./components/exams/user-exams";
 import AdminExams from "./components/exams/admin-exams";
+import AddExam from "./components/exams/add-exam.component";
+import EditExam from "./components/exams/edit-exam.component";
 
 
 class App extends Component {
@@ -157,7 +159,9 @@ class App extends Component {
             <Route path="/subjects/add" element={<AddSubject />} />
             <Route path="/subjects/edit/:id" element={<EditSubject />} />
             <Route path="/exams" element={<UserExams />} />
-            <Route path="admin/exams" element={<AdminExams />} />
+            <Route path="admin/exams" element={<AdminExams />}/>
+            <Route path="admin/exams/add" element={<AddExam />}/>
+            <Route path="admin/exams/edit/:id" element={<EditExam />} />
           </Routes>
         </div>
       </div>

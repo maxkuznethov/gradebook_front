@@ -6,64 +6,90 @@ import authHeader from "../../services/auth-header";
 export default function AddExam() {
   let navigate = useNavigate();
 
-  const [subject, setSubject] = useState({
-    name: "",
-    term: "",
-    hours: "",
+  const [exam, setExam] = useState({
+    student: "",
+    subject: "",
+    teacher: "",
+    mark: "",
+    date: "",
   });
 
-  const { name, term, hours } = subject;
+  const { student, subject, teacher, mark, date } = exam;
 
   const onInputChange = (e) => {
-    setSubject({ ...subject, [e.target.name]: e.target.value });
+    setExam({ ...exam, [e.target.name]: e.target.value });
   };
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:8080/api/subjects/add", subject, { headers: authHeader() });
-    navigate("/subjects");
+    await axios.post("https://gradebook-backend.onrender.com/api/exams/add", exam, { headers: authHeader() });
+    navigate("admin/exams");
   };
 
   return (
     <div className="container">
       <div className="row">
         <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow">
-          <h2 className="text-center m-4">Добавление дисциплины</h2>
+          <h2 className="text-center m-4">Добавление оценки</h2>
 
           <form onSubmit={(e) => onSubmit(e)}>
             <div className="mb-3">
               <label htmlFor="Title" className="form-label">
-                Название
+                Идентификатор студента
               </label>
               <input
                 type={"text"}
                 className="form-control"
-                name="name"
-                value={name}
+                name="student"
+                value={student}
                 onChange={(e) => onInputChange(e)}
               />
             </div>
             <div className="mb-3">
               <label htmlFor="Authorname" className="form-label">
-                Семестр
+                Идентификатор предмета
               </label>
               <input
                 type={"text"}
                 className="form-control"
-                name="term"
-                value={term}
+                name="subject"
+                value={subject}
                 onChange={(e) => onInputChange(e)}
               />
             </div>
             <div className="mb-3">
               <label htmlFor="Authorname" className="form-label">
-                Количество часов
+                Идентификатор преподавателя
               </label>
               <input
                   type={"text"}
                   className="form-control"
-                  name="hours"
-                  value={hours}
+                  name="teacher"
+                  value={teacher}
+                  onChange={(e) => onInputChange(e)}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="Authorname" className="form-label">
+                Оценка
+              </label>
+              <input
+                  type={"text"}
+                  className="form-control"
+                  name="mark"
+                  value={mark}
+                  onChange={(e) => onInputChange(e)}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="Authorname" className="form-label">
+                Дата
+              </label>
+              <input
+                  type={"text"}
+                  className="form-control"
+                  name="date"
+                  value={date}
                   onChange={(e) => onInputChange(e)}
               />
             </div>

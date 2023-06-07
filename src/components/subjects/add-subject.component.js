@@ -20,7 +20,7 @@ export default function AddSubject() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:8080/api/subjects/add", subject, { headers: authHeader() });
+    await axios.post("https://gradebook-backend.onrender.com/api/subjects/add", subject, { headers: authHeader() });
     navigate("/subjects");
   };
 

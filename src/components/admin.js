@@ -8,7 +8,7 @@ export default function Admin() {
 
     const {id} = useParams();
 
-    const API_URL = 'http://localhost:8080/api/users';
+    const API_URL = 'https://gradebook-backend.onrender.com/api/users';
 
     useEffect(() => {
         loadUsers();

@@ -19,7 +19,7 @@ export default function AddTeacher() {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        await axios.post("http://localhost:8080/api/teachers/add", teacher, {headers: authHeader()});
+        await axios.post("https://gradebook-backend.onrender.com/api/teachers/add", teacher, {headers: authHeader()});
         navigate("/teachers");
     };
 

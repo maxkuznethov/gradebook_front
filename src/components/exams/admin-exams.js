@@ -8,7 +8,7 @@ export default function AdminExams() {
     const [exams, setExams] = useState([]);
 
 
-    const API_URL = 'http://localhost:8080/api/exams';
+    const API_URL = 'https://gradebook-backend.onrender.com/api/exams';
 
     useEffect(() => {
 
@@ -20,6 +20,11 @@ export default function AdminExams() {
         const result = await axios.get(API_URL, {headers: authHeader()});
         setExams(result.data);
 
+    };
+
+    const deleteExam = async (id) => {
+        await axios.delete(`http://localhost:8080/api/exams/delete/${id}`, { headers: authHeader() });
+        loadExams();
     };
 
 
@@ -45,7 +50,7 @@ export default function AdminExams() {
                             <th scope="col">Преподаватель</th>
                             <th scope="col">Дата</th>
                             <th scope="col"></th>
-                            <th scope="col"></th>
+
                         </tr>
                         </thead>
                         <tbody>
@@ -62,11 +67,12 @@ export default function AdminExams() {
                                 <td>
                                     <Link
                                         className="btn btn-outline-dark mx-2"
-                                        to={`/subjects/edit/${exam.id}`}
+                                        to={`edit/${exam.id}`}
                                     >
                                         Изменить
                                     </Link>
                                 </td>
+
 
                             </tr>
                         ))}

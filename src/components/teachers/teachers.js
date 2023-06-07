@@ -8,7 +8,7 @@ export default function Teachers() {
 
 
 
-    const API_URL = 'http://localhost:8080/api/teachers';
+    const API_URL = 'https://gradebook-backend.onrender.com/api/teachers';
 
     useEffect(() => {
         loadTeachers();

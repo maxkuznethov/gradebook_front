@@ -1,7 +1,7 @@
 import axios from 'axios';
 import authHeader from './auth-header';
 
-const API_URL = 'http://localhost:8080/api/exams/';
+const API_URL = 'https://gradebook-backend.onrender.com/api/exams/';
 
 class UserService {
   getPublicContent() {

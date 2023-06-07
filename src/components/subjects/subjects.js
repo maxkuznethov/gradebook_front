@@ -8,7 +8,7 @@ export default function Subjects() {
 
     const {id} = useParams();
 
-    const API_URL = 'http://localhost:8080/api/subjects';
+    const API_URL = 'https://gradebook-backend.onrender.com/api/subjects';
 
     useEffect(() => {
         loadSubjects();

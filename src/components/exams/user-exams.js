@@ -10,7 +10,7 @@ export default function UserExams() {
     const id = AuthService.getCurrentUser().id;
 
 
-    const API_URL = 'http://localhost:8080/api/exams/get/'+id;
+    const API_URL = 'https://gradebook-backend.onrender.com/api/exams/get/'+id;
 
     useEffect(() => {
 

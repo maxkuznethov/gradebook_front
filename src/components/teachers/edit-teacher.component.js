@@ -26,7 +26,7 @@ export default function EditTeacher() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:8080/api/teachers/edit`, teacher, { headers: authHeader() });
+    await axios.put(`https://gradebook-backend.onrender.com/api/teachers/edit`, teacher, { headers: authHeader() });
     navigate("/teachers");
   };
 

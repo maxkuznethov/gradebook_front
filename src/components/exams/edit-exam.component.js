@@ -3,32 +3,28 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import authHeader from "../../services/auth-header";
 
-export default function EditSubject() {
+export default function EditExam() {
   let navigate = useNavigate();
 
   const { id } = useParams();
 
-  const [subject, setSubject] = useState({
+  const [exam, setExam] = useState({
     id: id,
-    name: "",
-    term: "",
-    hours: "",
+    mark: "",
   });
 
-  const { name, term, hours } = subject;
+  const { mark } = exam;
 
   const onInputChange = (e) => {
-    setSubject({ ...subject, [e.target.name]: e.target.value });
+    setExam({ ...exam, [e.target.name]: e.target.value });
   };
 
- /* useEffect(() => {
-    loadTeacher();
-  }, []);*/
+
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.put(`https://gradebook-backend.onrender.com/api/subjects/edit`, subject, { headers: authHeader() });
-    navigate("/subjects");
+    await axios.put(`https://gradebook-backend.onrender.com/api/exams/edit`, exam, { headers: authHeader() });
+    navigate("/admin/exams");
   };
 
   /*const loadTeacher = async () => {
@@ -40,45 +36,23 @@ export default function EditSubject() {
     <div className="container">
       <div className="row">
         <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow">
-          <h2 className="text-center m-4">Изменение дисциплины</h2>
+          <h2 className="text-center m-4">Изменение оценки</h2>
 
           <form onSubmit={(e) => onSubmit(e)}>
             <div className="mb-3">
               <label htmlFor="Title" className="form-label">
-                Название
+                Оценка
               </label>
               <input
                   type={"text"}
                   className="form-control"
-                  name="name"
-                  value={name}
+                  name="mark"
+                  value={mark}
                   onChange={(e) => onInputChange(e)}
               />
             </div>
-            <div className="mb-3">
-              <label htmlFor="Authorname" className="form-label">
-                Семестр
-              </label>
-              <input
-                  type={"text"}
-                  className="form-control"
-                  name="term"
-                  value={term}
-                  onChange={(e) => onInputChange(e)}
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="Authorname" className="form-label">
-                Количество часов
-              </label>
-              <input
-                  type={"text"}
-                  className="form-control"
-                  name="hours"
-                  value={hours}
-                  onChange={(e) => onInputChange(e)}
-              />
-            </div>
+
+
 
             <div className="form-group">
               <button type="submit" style={{backgroundColor: "#19517B", borderColor: "#19517B"}}
